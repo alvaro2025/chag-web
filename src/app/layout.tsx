@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chag.cl'),
@@ -44,6 +45,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   )

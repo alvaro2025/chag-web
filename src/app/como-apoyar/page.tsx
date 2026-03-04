@@ -42,7 +42,7 @@ const formas = [
     title: 'Donación Directa',
     description: 'Si deseas hacer una donación directa al proyecto, contáctanos por WhatsApp. Cada aporte, por pequeño que sea, nos acerca al objetivo de construir el hospital.',
     cta: 'Donar por WhatsApp',
-    ctaLink: 'https://wa.me/56956693126?text=Hola,%20quiero%20hacer%20una%20donaci%C3%B3n%20a%20CHAG',
+    ctaLink: 'https://wa.me/56984741253?text=Hola,%20quiero%20hacer%20una%20donaci%C3%B3n%20a%20CHAG',
     ctaExternal: true,
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export default function ComoApoyar() {
           <div className="space-y-4">
             {[
               { q: '¿Cuánto de mi ticket va al hospital?', a: 'Un porcentaje de cada ticket vendido en TuSorteoLegal se destina directamente al fondo de construcción del hospital CHAG. Los montos exactos se publican en nuestros informes de transparencia.' },
-              { q: '¿Puedo donar sin comprar un ticket?', a: 'Sí, puedes hacer donaciones directas contactándonos por WhatsApp al +569 5669 3126. Aceptamos transferencias bancarias.' },
+              { q: '¿Puedo donar sin comprar un ticket?', a: 'Sí, puedes hacer donaciones directas contactándonos por WhatsApp al +569 8474 1253. Aceptamos transferencias bancarias.' },
               { q: '¿Cómo sé que mi aporte se usa correctamente?', a: 'Publicamos informes periódicos de transparencia en nuestro sitio web y redes sociales, detallando ingresos, gastos y avance del proyecto.' },
             ].map((faq) => (
               <div key={faq.q} className="bg-white rounded-xl border border-gray-100 p-6">

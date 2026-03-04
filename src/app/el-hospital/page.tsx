@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
+import CtaButtons from '@/components/CtaButtons'
 
 export const metadata: Metadata = {
   title: 'El Hospital',
@@ -144,12 +144,7 @@ export default function ElHospital() {
           <p className="text-white/60 font-body mb-8">
             Cada ticket comprado en TuSorteoLegal nos acerca un paso más a este sueño.
           </p>
-          <Link
-            href="/como-apoyar"
-            className="inline-block px-8 py-3 bg-cta hover:bg-cta-600 text-white font-bold rounded-full transition-all font-body"
-          >
-            Cómo Apoyar
-          </Link>
+          <CtaButtons />
         </div>
       </section>
     </main>

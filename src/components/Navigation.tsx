@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -23,15 +22,12 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/chag-logo.png"
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/foto%20de%20logo%20horizontal.png"
               alt="CHAG"
-              width={40}
-              height={40}
-              className="rounded"
+              style={{ height: '48px' }}
             />
-            <span className="text-xl font-display font-bold text-navy">CHAG</span>
           </Link>
 
           {/* Desktop nav */}

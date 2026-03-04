@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import CtaButtons from './CtaButtons'
 
 interface Particle {
   id: number
@@ -38,15 +38,23 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        poster="/images/chag-logo.png"
+        style={{ objectFit: 'cover', width: '100%', height: '100%', position: 'absolute' }}
       >
-        <source src="/videos/hospital.mp4" type="video/mp4" />
+        <source src="/images/video%20hospital%20CHAG.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-navy/80" />
       <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/70 to-navy/90" />
+
+      {/* Background logo */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img
+          src="/images/foto%20de%20logo%20fondo.png"
+          alt=""
+          className="w-[500px] max-w-[80vw] opacity-10"
+        />
+      </div>
 
       {/* Floating particles */}
       {particles.map((particle) => (
@@ -107,20 +115,8 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link
-            href="/como-apoyar"
-            className="px-8 py-4 bg-cta hover:bg-cta-600 text-white font-bold text-lg rounded-full shadow-lg shadow-cta/30 hover:shadow-cta/50 transform hover:scale-105 transition-all duration-300 font-body"
-          >
-            Apoyar Ahora
-          </Link>
-          <Link
-            href="/el-hospital"
-            className="px-8 py-4 bg-transparent border-2 border-white/40 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all duration-300 font-body"
-          >
-            Conocer el Proyecto
-          </Link>
+          <CtaButtons size="large" />
         </motion.div>
 
         {/* Scroll indicator */}

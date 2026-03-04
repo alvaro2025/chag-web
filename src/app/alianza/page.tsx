@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
+import CtaButtons from '@/components/CtaButtons'
 
 export const metadata: Metadata = {
   title: 'Alianza',
@@ -148,22 +148,7 @@ export default function Alianza() {
           <p className="text-white/60 font-body mb-8">
             Compra un ticket, gana premios y ayuda a construir el hospital.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://tusorteolegal.cl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-cta hover:bg-cta-600 text-white font-bold rounded-full transition-all font-body"
-            >
-              Comprar Ticket
-            </a>
-            <Link
-              href="/como-apoyar"
-              className="px-8 py-3 border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all font-body"
-            >
-              Otras formas de apoyar
-            </Link>
-          </div>
+          <CtaButtons />
         </div>
       </section>
     </main>

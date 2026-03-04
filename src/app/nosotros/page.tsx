@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
+import CtaButtons from '@/components/CtaButtons'
 
 export const metadata: Metadata = {
   title: 'Nosotros',
@@ -106,20 +106,7 @@ export default function Nosotros() {
           <p className="text-navy/60 font-body mb-8">
             Únete al movimiento que está transformando la vida de los animales en Chile.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/como-apoyar"
-              className="px-8 py-3 bg-cta hover:bg-cta-600 text-white font-bold rounded-full transition-all font-body"
-            >
-              Cómo Apoyar
-            </Link>
-            <Link
-              href="/el-hospital"
-              className="px-8 py-3 border-2 border-navy text-navy font-bold rounded-full hover:bg-navy hover:text-white transition-all font-body"
-            >
-              Conocer el Hospital
-            </Link>
-          </div>
+          <CtaButtons />
         </div>
       </section>
     </main>

@@ -133,7 +133,7 @@ export default function Contacto() {
                     </svg>
                     <div>
                       <p className="text-navy/50 text-sm">Teléfono</p>
-                      <p className="text-navy font-medium">+569 5669 3126</p>
+                      <p className="text-navy font-medium">+569 8474 1253</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -151,7 +151,7 @@ export default function Contacto() {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/56956693126"
+                href="https://wa.me/56984741253"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 bg-green-50 border border-green-200 rounded-2xl p-6 hover:bg-green-100 transition-colors"
