@@ -26,7 +26,7 @@ export default function Navigation() {
             <img
               src="/images/foto%20de%20logo%20horizontal.png"
               alt="CHAG"
-              style={{ height: '48px' }}
+              style={{ height: '64px', width: 'auto' }}
             />
           </Link>
 
