@@ -69,6 +69,7 @@ export default function Footer() {
             <ul className="space-y-2 font-body">
               <li><span className="text-white/60 text-sm">Fundación CHAG</span></li>
               <li><span className="text-white/60 text-sm">Santiago, Chile</span></li>
+              <li><Link href="/privacidad" className="text-white/60 hover:text-white text-sm transition-colors">Política de Privacidad</Link></li>
               <li><Link href="/alianza" className="text-white/60 hover:text-white text-sm transition-colors">Alianza con TuSorteoLegal</Link></li>
               <li>
                 <a href="https://tusorteolegal.cl" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">
