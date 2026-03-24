@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/como-apoyar', label: 'Cómo Apoyar' },
   { href: '/alianza', label: 'Alianza' },
   { href: '/blog', label: 'Blog' },
+  { href: '/preguntas', label: 'Preguntas' },
   { href: '/contacto', label: 'Contacto' },
 ]
 
