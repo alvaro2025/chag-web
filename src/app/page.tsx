@@ -7,6 +7,7 @@ import Timeline from '@/components/Timeline'
 import Principles from '@/components/Principles'
 import CtaFinal from '@/components/CtaFinal'
 import { Metadata } from 'next'
+import FAQSection from '@/components/FAQSection'
 
 export const metadata: Metadata = {
   title: 'CHAG - Centro Hospitalario Animal Gratuito',
@@ -38,6 +39,7 @@ export default function Home() {
       <Model />
       <Timeline />
       <Principles />
+      <FAQSection />
       <CtaFinal />
     </main>
   )
