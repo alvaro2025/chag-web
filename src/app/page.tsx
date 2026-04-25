@@ -6,6 +6,7 @@ import Model from '@/components/Model'
 import Timeline from '@/components/Timeline'
 import Principles from '@/components/Principles'
 import CtaFinal from '@/components/CtaFinal'
+import CertificadoSection from '@/components/CertificadoSection'
 import { Metadata } from 'next'
 import FAQSection from '@/components/FAQSection'
 
@@ -40,7 +41,9 @@ export default function Home() {
       <Timeline />
       <Principles />
       <FAQSection />
+      <CertificadoSection />
       <CtaFinal />
     </main>
   )
 }
+
