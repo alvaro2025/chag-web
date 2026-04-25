@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/el-hospital', label: 'El Hospital' },
   { href: '/como-apoyar', label: 'Cómo Apoyar' },
+  { href: '/certificado', label: 'Tu Certificado' },
   { href: '/alianza', label: 'Alianza' },
   { href: '/blog', label: 'Blog' },
   { href: '/preguntas', label: 'Preguntas' },
