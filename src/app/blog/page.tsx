@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import { Metadata } from 'next'
+import { getAllBlogPosts } from '@/lib/mdx'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -6,34 +8,9 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://chag.cl/blog' },
 }
 
-const articles = [
-  {
-    slug: 'por-que-chile-necesita-hospital-veterinario-gratuito',
-    title: 'Por qué Chile necesita un hospital veterinario gratuito',
-    excerpt: 'Más de 250.000 familias chilenas no pueden costear atención veterinaria para sus mascotas. Analizamos la realidad y la solución que proponemos desde CHAG.',
-    date: '20 de febrero de 2026',
-    readTime: '6 min',
-    category: 'Impacto Social',
-  },
-  {
-    slug: 'como-funciona-modelo-sorteo-solidario',
-    title: 'Cómo funciona el modelo de sorteo solidario',
-    excerpt: 'Explicamos paso a paso cómo la alianza entre CHAG y TuSorteoLegal permite financiar la construcción del hospital mientras los participantes ganan premios.',
-    date: '5 de febrero de 2026',
-    readTime: '4 min',
-    category: 'Modelo',
-  },
-  {
-    slug: 'historias-que-inspiran-animales-necesitan-ayuda',
-    title: 'Historias que inspiran: los animales que necesitan nuestra ayuda',
-    excerpt: 'Conoce las historias reales de familias y animales que nos motivan a seguir trabajando por hacer realidad el primer hospital veterinario gratuito de Chile.',
-    date: '15 de enero de 2026',
-    readTime: '5 min',
-    category: 'Historias',
-  },
-]
-
 export default function Blog() {
+  const articles = getAllBlogPosts()
+
   return (
     <main className="min-h-screen">
       {/* Hero */}
@@ -53,33 +30,44 @@ export default function Blog() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="space-y-6">
             {articles.map((article) => (
-              <article
+              <Link
                 key={article.slug}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 hover:shadow-md hover:border-gray-200 transition-all"
+                href={`/blog/${article.slug}`}
+                className="block"
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-heart/10 text-heart text-xs font-body font-bold rounded-full">
-                    {article.category}
+                <article className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 hover:shadow-md hover:border-gray-200 transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="px-3 py-1 bg-heart/10 text-heart text-xs font-body font-bold rounded-full">
+                      {article.category}
+                    </span>
+                    <span className="text-navy/40 text-sm font-body">{article.date}</span>
+                    <span className="text-navy/40 text-sm font-body">{article.readTime} lectura</span>
+                  </div>
+
+                  <h2 className="text-xl md:text-2xl font-display font-bold text-navy mb-3">
+                    {article.title}
+                  </h2>
+
+                  <p className="text-navy/60 font-body mb-4">{article.excerpt}</p>
+
+                  <span className="text-heart hover:text-heart-600 transition-colors font-body font-semibold text-sm inline-flex items-center gap-1">
+                    Leer artículo
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </span>
-                  <span className="text-navy/40 text-sm font-body">{article.date}</span>
-                  <span className="text-navy/40 text-sm font-body">{article.readTime} lectura</span>
-                </div>
-
-                <h2 className="text-xl md:text-2xl font-display font-bold text-navy mb-3">
-                  {article.title}
-                </h2>
-
-                <p className="text-navy/60 font-body mb-4">{article.excerpt}</p>
-
-                <span className="text-heart hover:text-heart-600 transition-colors font-body font-semibold text-sm inline-flex items-center gap-1 cursor-default">
-                  Leer artículo
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
+
+          {articles.length === 0 && (
+            <div className="mt-12 text-center">
+              <p className="text-navy/40 font-body">
+                No hay artículos disponibles en este momento.
+              </p>
+            </div>
+          )}
 
           <div className="mt-12 text-center">
             <p className="text-navy/40 font-body">
