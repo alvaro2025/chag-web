@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description: 'El primer hospital veterinario gratuito de Chile. Porque todos los animales merecen atención médica, independiente de la situación económica de su familia.',
   keywords: 'hospital veterinario gratuito, chile, animales, veterinario gratis, CHAG, fundación animal',
   authors: [{ name: 'CHAG' }],
+verification: {
+  google: 'QWUh4rZDZ1cp-DD78nc5yInfbUBNpUB2Mvfy0taCJLo',
+  },
   openGraph: {
     title: 'CHAG - Centro Hospitalario Animal Gratuito',
     description: 'El primer hospital veterinario gratuito de Chile.',
