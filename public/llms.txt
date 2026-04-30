@@ -1,0 +1,16 @@
+# CHAG - Centro Hospitalario Animal Gratuito
+> El primer hospital veterinario gratuito de Chile
+
+## Descripción
+CHAG es una iniciativa que busca construir el primer hospital público
+y gratuito de mascotas en Chile. Financiado por TuSorteoLegal.
+Modelo de atención basado en la Ficha de Protección Social del Estado.
+
+## Páginas importantes
+- https://chag.cl — Página principal
+- https://chag.cl/el-hospital — El hospital
+- https://chag.cl/como-apoyar — Cómo apoyar
+- https://chag.cl/nosotros — Nosotros
+
+## Contacto
+contacto@chag.cl
