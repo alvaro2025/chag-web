@@ -42,6 +42,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+    <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NGO",
+              "name": "CHAG - Centro Hospitalario Animal Gratuito",
+              "url": "https://chag.cl",
+              "description": "El primer hospital veterinario gratuito de Chile.",
+              "foundingLocation": "Santiago, Chile",
+              "areaServed": "Chile"
+            })
+          }}
+        />
+      </head>
       <body className="font-body antialiased">
         <Navigation />
         <div className="pt-16">
