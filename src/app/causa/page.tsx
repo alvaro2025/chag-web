@@ -84,10 +84,11 @@ function SectionTitle({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#E63946]">
         {kicker}
       </p>
-      <h2 className="font-display text-3xl font-bold text-[#153B2E] md:text-4xl">{title}</h2>
+      <h2 className="font-display text-3xl font-bold text-[#1B3A5C] md:text-4xl">{title}</h2>
+      <div className="mt-4 h-1.5 w-28 rounded-full bg-[linear-gradient(90deg,#E63946_0%,#D4AF37_50%,#22C55E_100%)]" />
       {text ? <p className="mt-4 text-base leading-7 text-slate-700">{text}</p> : null}
     </div>
   )
@@ -101,9 +102,28 @@ function Stat({
   label: string
 }) {
   return (
-    <div className="rounded-[1.75rem] border border-[#D4AF37]/20 bg-white p-5 shadow-[0_18px_45px_rgba(21,59,46,0.08)]">
-      <p className="font-display text-2xl font-bold text-[#153B2E]">{value}</p>
+    <div className="rounded-[1.75rem] border border-[#1B3A5C]/10 bg-white p-5 shadow-[0_18px_45px_rgba(27,58,92,0.08)]">
+      <p className="font-display text-2xl font-bold text-[#1B3A5C]">{value}</p>
       <p className="mt-2 text-sm leading-6 text-slate-700">{label}</p>
+    </div>
+  )
+}
+
+function ColorOrb({ index }: { index: number }) {
+  const ringClass =
+    index === 0
+      ? 'bg-[linear-gradient(135deg,#E63946_0%,#D4AF37_50%,#22C55E_100%)]'
+      : index === 1
+        ? 'bg-[linear-gradient(135deg,#22C55E_0%,#D4AF37_50%,#E63946_100%)]'
+        : 'bg-[linear-gradient(135deg,#D4AF37_0%,#E63946_50%,#22C55E_100%)]'
+
+  return (
+    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[linear-gradient(135deg,#fff,rgba(255,255,255,0.6))] p-1 shadow-[0_12px_30px_rgba(27,58,92,0.14)]">
+      <div className={`flex h-full w-full items-center justify-center rounded-full ${ringClass} animate-[spin_10s_linear_infinite]`}>
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg">
+          {index === 0 ? '🤝' : index === 1 ? '💚' : '🏥'}
+        </span>
+      </div>
     </div>
   )
 }
@@ -145,12 +165,13 @@ export default function CausaPage() {
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.18),transparent_42%),radial-gradient(circle_at_top_left,rgba(76,175,80,0.12),transparent_38%)]" />
         <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col gap-12 px-5 py-16 md:px-8 lg:flex-row lg:items-center lg:py-24">
           <div className="max-w-3xl">
-            <p className="mb-4 inline-flex rounded-full border border-[#4CAF50]/20 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50] shadow-sm">
+            <p className="mb-4 inline-flex rounded-full border border-[#1B3A5C]/10 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#E63946] shadow-sm">
               Causa CHAG
             </p>
-            <h1 className="font-display text-4xl font-bold leading-tight text-[#153B2E] md:text-6xl">
+            <h1 className="font-display text-4xl font-bold leading-tight text-[#1B3A5C] md:text-6xl">
               Una causa concreta para construir el primer hospital veterinario gratuito de Chile.
             </h1>
+            <div className="mt-5 h-1.5 w-32 rounded-full bg-[linear-gradient(90deg,#E63946_0%,#D4AF37_50%,#22C55E_100%)]" />
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 md:text-xl">
               CHAG une una campaña de participación, premios y transparencia para transformar
               apoyo ciudadano en atención veterinaria real para miles de animales y sus familias.
@@ -158,24 +179,29 @@ export default function CausaPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/como-apoyar"
-                className="inline-flex items-center justify-center rounded-full bg-[#4CAF50] px-7 py-4 text-sm font-semibold text-white shadow-[0_16px_35px_rgba(76,175,80,0.28)] transition hover:bg-[#3d9a42]"
+                className="inline-flex items-center justify-center rounded-full bg-[#22C55E] px-7 py-4 text-sm font-semibold text-white shadow-[0_16px_35px_rgba(34,197,94,0.28)] transition hover:bg-[#16a34a]"
               >
                 Apoyar la causa
               </Link>
               <Link
                 href="/el-hospital"
-                className="inline-flex items-center justify-center rounded-full border border-[#D4AF37]/25 bg-white px-7 py-4 text-sm font-semibold text-[#153B2E] transition hover:border-[#4CAF50]/30 hover:text-[#4CAF50]"
+                className="inline-flex items-center justify-center rounded-full border border-[#1B3A5C]/15 bg-white px-7 py-4 text-sm font-semibold text-[#1B3A5C] transition hover:border-[#E63946]/30 hover:text-[#E63946]"
               >
                 Ver el hospital
               </Link>
             </div>
-          </div>
 
-          <div className="grid w-full max-w-xl gap-4 sm:grid-cols-2">
-            <Stat value="7 secciones" label="Una landing de causa clara, móvil primero y fácil de recorrer." />
-            <Stat value="Transparencia" label="Documentación y avance visibles para que el apoyo tenga trazabilidad." />
-            <Stat value="Premios" label="Incentivos concretos para sumar participación sin perder el foco social." />
-            <Stat value="Hospital" label="La meta real: atención veterinaria gratuita para quienes más lo necesitan." />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="rounded-full border border-[#1B3A5C]/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1B3A5C]">
+                Apoyo real
+              </span>
+              <span className="rounded-full border border-[#1B3A5C]/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#E63946]">
+                Premios visibles
+              </span>
+              <span className="rounded-full border border-[#1B3A5C]/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#22C55E]">
+                Transparencia pública
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -190,13 +216,11 @@ export default function CausaPage() {
           {steps.map((step, index) => (
             <article
               key={step.title}
-              className="rounded-[1.75rem] border border-[#D4AF37]/20 bg-white p-6 shadow-[0_18px_45px_rgba(21,59,46,0.08)]"
+              className="rounded-[1.75rem] border border-[#1B3A5C]/10 bg-white p-6 shadow-[0_18px_45px_rgba(27,58,92,0.08)]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#4CAF50]/10 text-2xl">
-                {index === 0 ? '🤝' : index === 1 ? '💚' : '🏥'}
-              </div>
-              <p className="mt-5 font-display text-5xl font-bold text-[#4CAF50]/20">{index + 1}</p>
-              <h3 className="mt-4 font-display text-2xl font-bold text-[#153B2E]">{step.title}</h3>
+              <ColorOrb index={index} />
+              <p className="mt-5 font-display text-5xl font-bold text-[#E63946]/20">{index + 1}</p>
+              <h3 className="mt-4 font-display text-2xl font-bold text-[#1B3A5C]">{step.title}</h3>
               <p className="mt-3 text-base leading-7 text-slate-700">{step.text}</p>
             </article>
           ))}
@@ -213,14 +237,14 @@ export default function CausaPage() {
             />
             <ul className="mt-8 space-y-4">
               {hospitalHighlights.map((item) => (
-                <li key={item} className="flex gap-3 rounded-2xl border border-[#D4AF37]/10 bg-white p-4 shadow-sm">
-                  <span className="mt-1 h-3 w-3 rounded-full bg-[#4CAF50]" />
+                <li key={item} className="flex gap-3 rounded-2xl border border-[#1B3A5C]/10 bg-white p-4 shadow-sm">
+                  <span className="mt-1 h-3 w-3 rounded-full bg-[#22C55E]" />
                   <span className="text-base leading-7 text-slate-700">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-[2rem] border border-[#D4AF37]/20 bg-white p-6 shadow-[0_30px_80px_rgba(21,59,46,0.12)]">
+          <div className="rounded-[2rem] border border-[#1B3A5C]/10 bg-white p-6 shadow-[0_30px_80px_rgba(27,58,92,0.12)]">
             <div className="rounded-[1.5rem] bg-[linear-gradient(180deg,#153B2E_0%,#0e261d_100%)] p-6 text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                 Proyecto CHAG
@@ -273,15 +297,15 @@ export default function CausaPage() {
           <SectionTitle
             kicker="Transparencia legal"
             title="La causa solo funciona si todo es claro, público y verificable."
-            text="La confianza se construye con documentos, trazabilidad y una forma simple de entender dónde va cada aporte."
+            text="Acá no te pedimos fe ciega: te mostramos lo que hay, cómo avanza y dónde mirar si querés seguir el rastro."
           />
           <div className="mt-10 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-[1.75rem] border border-[#D4AF37]/20 bg-white p-6 shadow-sm">
-              <p className="font-display text-2xl font-bold text-[#153B2E]">Pilares de transparencia</p>
+            <div className="rounded-[1.75rem] border border-[#1B3A5C]/10 bg-white p-6 shadow-sm">
+              <p className="font-display text-2xl font-bold text-[#1B3A5C]">Pilares de transparencia</p>
               <ul className="mt-5 space-y-4">
                 {transparency.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#4CAF50]" />
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#22C55E]" />
                     <span className="text-base leading-7 text-slate-700">{item}</span>
                   </li>
                 ))}
@@ -335,7 +359,7 @@ export default function CausaPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/como-apoyar"
-                  className="inline-flex items-center justify-center rounded-full bg-[#4CAF50] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_35px_rgba(76,175,80,0.28)] transition hover:bg-white hover:text-[#153B2E]"
+                  className="inline-flex items-center justify-center rounded-full bg-[#22C55E] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_35px_rgba(34,197,94,0.28)] transition hover:bg-white hover:text-[#1B3A5C]"
                 >
                   Quiero apoyar ahora
                 </Link>
